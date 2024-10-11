@@ -67,12 +67,22 @@ h1{
 }
 
 .aaa{
+    margin-top: 10px;
     color: green;
+    background-color: #a0a0a0;
     text-decoration: none;
 }
 .aaa:hover{
+    margin-top: 10px;
+    background-color: #c0c0c0;
     color: lightgreen;
     text-decoration-line: underline;
+}
+
+.aaaa{
+    margin: 10px;
+    color: lime;
+    background-color: #707070;
 }
 
 .coolbtn{
