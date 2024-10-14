@@ -13,7 +13,6 @@ function set_avatarimg(){
     document.getElementById("pfp").src = i;
 }
 
-
 function add_phone(){
     let name = document.getElementById("nametext").value;
     let tel = document.getElementById("teltext").value;
