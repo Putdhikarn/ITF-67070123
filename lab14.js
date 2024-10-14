@@ -1,11 +1,11 @@
 
 let phone_list = []
 
-document.getElementById("displayusername").innerHTML = "My Username's Notebook";
+document.getElementById("displayusername").innerHTML = "Putdhikarn Krainara 67070123's Notebook";
 
 function set_usrname(){
     let x = document.getElementById("usrname").value;
-    document.getElementById("displayusername").innerHTML = "My " + x + "'s Notebook";
+    document.getElementById("displayusername").innerHTML = x + "'s Notebook";
 }
 
 function set_avatarimg(){
@@ -17,8 +17,10 @@ function set_avatarimg(){
 function add_phone(){
     let name = document.getElementById("nametext").value;
     let tel = document.getElementById("teltext").value;
-    phone_list.push([name, tel])
-    display_phone_list()
+    phone_list.push([name, tel]);
+    document.getElementById("nametext").value = "";
+    document.getElementById("teltext").value = "";
+    display_phone_list();
 }
 
 function display_phone_list(){
@@ -49,7 +51,25 @@ function display_phone_list(){
         trow.appendChild(namea)
         trow.appendChild(tel)
     }
-    
+}
+
+function doExportCSV(){
+    headers = ["No.", "Name", "Tel"];
+    rows = [];
+    rows.push(headers.join(","))
+    for (i = 0; i < phone_list.length; i++){
+        data = [i, phone_list[i][0], phone_list[i][1]]
+        rows.push(data.join(","))
+    }
+    done = rows.join("\n")
+    console.log(done);
+    let blob = new Blob([done], {type : "text/csv"});
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "export.csv";
+    a.hidden = true;
+    a.click();
 }
 
 display_phone_list()

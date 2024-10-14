@@ -6,9 +6,12 @@
     </title>
     <body>
         <div>
-            <h1  id="displayusername"></h1>
+            <a href="https://github.com/Putdhikarn" target="_blank" id="displayusername" class="username-link"></a>
             <div class="avatar-div">
-                <img class="avatar" id="pfp" src="https://avatars.githubusercontent.com/u/176594630?s=48&v=4">
+                <div class="avatar-img-div">
+                    <img class="avatar" id="pfp" src="https://avatars.githubusercontent.com/u/176594630?s=48&v=4">
+                    <span class="notif">1</span>
+                </div>
             </div>
             <div class="username-text">
                 Set the Username
@@ -25,7 +28,7 @@
                 <input type="url" id="nametext" placeholder="Name" class="textfield">
                 <input type="url" id="teltext" placeholder="Tel" class="textfield">
                 <button onclick="add_phone()" class="set-btn">ADD</button>
-                <button onclick="set_avatarimg()" class="set-btn">EXPORT</button>
+                <button onclick="doExportCSV()" class="set-btn">EXPORT</button>
             </div>
             <div>
                 <table class="ptable" id="phonetable">
